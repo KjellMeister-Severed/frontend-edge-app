@@ -9,7 +9,7 @@ const Logs = () => {
 
     useEffect(() => {
         socket.on("log", msg => {
-            setLogs([...logs, msg])
+            setLogs(logs.concat(msg))
         })
     },[logs, socket]);
 
